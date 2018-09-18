@@ -1,0 +1,11 @@
+name = Forschungsatlas Resource
+description = Provide web services for the NeFo Forschungsatlas module.
+package = NEFO FORSCHUNGSATLAS
+
+dependencies[] = forschungsatlas
+dependencies[] = services
+
+version = "7.x-1.0"
+core = "7.x"
+
+

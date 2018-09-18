@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * Implements hook_services_resources().
+ */
+function forschungsatlas_resource_services_resources() {
+  $researchmap_resource = array(
+    'institution' => array(
+      'operations' => array(
+        'retrieve' => array(
+          'help' => 'Retrieves an institution',
+          'file' => array('type' => 'inc', 'module' => 'forschungsatlas_resource', 'name' => 'resources/institution.forschungsatlas_resource'),
+          'callback' => '_institution_resource_retrieve',
+          'access callback' => 'user_access',
+          'access arguments' => array('access nefo institutions'),
+          'access arguments append' => FALSE,
+          'args' => array(
+            array(
+              'name' => 'iid',
+              'type' => 'int',
+              'description' => 'The id of the institution to get',
+              'optional' => FALSE,
+              'source' => array('path' => 0),
+            ),
+          ),
+        ),//retrieve
+        'index' => array(
+          'help' => 'Retrieves a listing of institutions',
+          'file' => array('type' => 'inc', 'module' => 'forschungsatlas_resource', 'name' => 'resources/institution.forschungsatlas_resource'),
+          'callback' => '_institution_resource_index',
+          'access callback' => 'user_access',
+          'access arguments' => array('access nefo institutions'),
+          'access arguments append' => FALSE,
+          'args' => array(
+            array(
+              'name' => 'page',
+              'type' => 'int',
+              'description' => '',
+              'optional' => TRUE,
+              'default value' => 0,
+              'source' => array('param' => 'page'),
+            ),
+          ),
+        ),//index
+      ),//operations
+    ),//institution
+  );
+  
+  return $researchmap_resource;
+}
+ 
+ 
