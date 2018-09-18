@@ -66,7 +66,6 @@ function _institution_resource_index($page) {
     $row->city = $data->city;
     $row->federalstate = $data->federalstate;
     $row->assembledparentname = $data->assembledparentname;
-
     $rows[] = $row;
   }
 
