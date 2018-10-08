@@ -14,6 +14,7 @@ function _institution_resource_retrieve($iid) {
     $result->abbrev = empty($institution['abbrev']) ? null : $institution['abbrev'];
     $result->address = array(
         'street' => $institution['street'],
+        'street2' => $institution['street2'],
         'postalcode' => $institution['postalcode'],
         'city' => $institution['city'],
         'federalstate' => $institution['federalstate'],
